@@ -1,0 +1,20 @@
+<keycloak-saml-adapter xmlns="urn:keycloak:saml:adapter">
+    <SP entityID="my-sp"
+        sslPolicy="EXTERNAL"
+        nameIDPolicyFormat="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">
+        <Keys>
+            <Key signing="true"/>
+        </Keys>
+        <IDP entityID="https://keycloak.example.com/auth/realms/myrealm">
+            <SingleSignOnService signRequest="true"
+                                 validateResponseSignature="true"
+                                 requestBinding="POST"
+                                 bindingUrl="https://keycloak.example.com/auth/realms/myrealm/protocol/saml"/>
+            <SingleLogoutService signRequest="true"
+                                 validateResponseSignature="true"
+                                 requestBinding="POST"
+                                 responseBinding="POST"
+                                 bindingUrl="https://keycloak.example.com/auth/realms/myrealm/protocol/saml"/>
+        </IDP>
+    </SP>
+</keycloak-saml-adapter>
