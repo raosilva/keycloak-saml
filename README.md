@@ -9,3 +9,7 @@
             exclusions = Collections.emptyList();  // Evita NullPointerException
         }
     }
+<init-param>
+    <param-name>exclusions</param-name>
+    <param-value>/SSO.jsp</param-value>
+</init-param>
