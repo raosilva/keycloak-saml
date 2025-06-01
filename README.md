@@ -13,3 +13,6 @@
     <param-name>exclusions</param-name>
     <param-value>/SSO.jsp</param-value>
 </init-param>
+            URL url = new URL("http://localhost:8080/minhaapi/roles?user=" + username);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
